@@ -1,0 +1,115 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: url('images/photo_2024-06-27_11-24-39.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-section p {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .cta-btn {
+    padding: 15px 30px;
+    background: #f04f4f;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  
+  .section {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .about-section .video-container {
+    margin-top: 20px;
+  }
+  
+  .benefits-section {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .benefit {
+    width: 30%;
+  }
+  
+  .benefit img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .testimonials-section {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .testimonial {
+    width: 45%;
+  }
+  
+  .testimonial img {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    padding: 20px;
+    background: #333;
+    color: white;
+    text-align: center;
+  }
+  
