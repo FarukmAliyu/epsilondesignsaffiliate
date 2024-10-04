@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +40,28 @@
       line-height: 1.6;
     }
 
+    blockquote {
+      margin: 20px 0;
+      font-size: 18px;
+      color: #555;
+      border-left: 4px solid #28a745;
+      padding-left: 10px;
+    }
+
+    /* Video Section */
+    .video-section {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    video {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Back Button */
     .btn-back {
       display: block;
       text-align: center;
@@ -65,7 +86,7 @@
 <body>
   <!-- Header Section -->
   <header>
-    <h1></h1>
+    <h1>Testimonials from Our Members</h1>
   </header>
 
   <!-- Testimonials Section -->
@@ -75,6 +96,16 @@
     <blockquote>"I was able to quit my 9-to-5 job and focus on my business full-time." - User 2</blockquote>
     <blockquote>"The training and community support have been invaluable!" - User 3</blockquote>
 
+    <!-- Video Section -->
+    <div class="video-section">
+      <h3>Watch Our Success Story Video</h3>
+      <video controls>
+        <source src="path_to_your_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Back Button -->
     <div class="btn-back">
       <a href="index.html" class="back-btn">Go Back to Main Page</a>
     </div>
