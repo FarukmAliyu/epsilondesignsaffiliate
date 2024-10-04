@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Existing CSS */
+    /* Global Styling */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -17,13 +16,56 @@
       background-color: #f4f4f4;
     }
 
-    h2, h3 {
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      text-align: center;
+    /* Header Styling */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
     }
 
-    p {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    ul li a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    /* Section Headings */
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    p, blockquote {
       font-family: 'Roboto', sans-serif;
       color: #666;
       font-size: 16px;
@@ -32,48 +74,49 @@
 
     /* Quiz Section Styling */
     .quiz-section {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
+      text-align: center;
+      margin: 30px 0;
       background-color: #fff;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 40px;
-      border-radius: 8px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .quiz-question {
       font-family: 'Poppins', sans-serif;
       font-size: 20px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .quiz-options {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
     }
 
     .quiz-option {
-      background-color: #f0f0f0;
-      padding: 10px;
-      margin: 5px 0;
-      border: none;
-      border-radius: 5px;
+      background-color: #f9f9f9;
+      padding: 10px 20px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      transition: background-color 0.3s ease;
     }
 
     .quiz-option:hover {
-      background-color: #e0e0e0;
+      background-color: #28a745;
+      color: white;
     }
 
     .quiz-result {
+      display: none;
       margin-top: 20px;
+      font-size: 18px;
+    }
+
+    /* Form and Button */
+    form input, form button {
       font-family: 'Poppins', sans-serif;
-      font-size: 22px;
-      color: #28a745;
     }
 
     .cta-btn {
@@ -83,16 +126,23 @@
       padding: 10px 20px;
       border: none;
       cursor: pointer;
-      margin-top: 20px;
     }
 
     .cta-btn:hover {
       background-color: #218838;
     }
+
+    /* Footer Styling */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
-
   <!-- Header Section -->
   <header>
     <nav>
@@ -101,7 +151,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#benefits">Benefits</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#quiz">Personality Quiz</a></li>
+        <li><a href="#join">Join Now</a></li>
       </ul>
     </nav>
   </header>
@@ -110,6 +160,7 @@
   <section id="about" class="section about-section">
     <h2>What is the Multiple Income Generator Program?</h2>
     <p>This program helps you build passive income through affiliate marketing, e-commerce, investments, and more.</p>
+    
     <div class="audio-container">
       <audio controls>
         <source src="audio/audio_2024-10-02.mp3" type="audio/mp3">
@@ -119,31 +170,36 @@
     </div>
   </section>
 
-  <!-- Quiz Section -->
-  <section id="quiz" class="section quiz-section">
-    <h2>Personality Quiz</h2>
-    <p>Find out what type of entrepreneur you are!</p>
-    <div class="quiz-question">1. How do you feel about taking risks?</div>
+  <!-- Personality Quiz Section -->
+  <section class="quiz-section">
+    <h2>Find Out Your Entrepreneurial Style!</h2>
+    <div class="quiz-question">What's your approach to starting a new project? 🤔</div>
     <div class="quiz-options">
-      <button class="quiz-option" onclick="selectOption('A')">🚀 I love them!</button>
-      <button class="quiz-option" onclick="selectOption('B')">🤔 I’m cautious but open</button>
-      <button class="quiz-option" onclick="selectOption('C')">😅 I avoid them as much as possible</button>
+      <div class="quiz-option" onclick="showResult('You are a Planner! 📝 You like to have everything organized before starting.')">📋 Plan everything in advance</div>
+      <div class="quiz-option" onclick="showResult('You are a Risk-Taker! 🎢 You love diving in and taking bold steps.')">🔥 Jump in and figure it out as you go</div>
+      <div class="quiz-option" onclick="showResult('You are a Collaborator! 🤝 You value teamwork and input from others.')">🤝 Work with a team to brainstorm ideas</div>
     </div>
-    <div class="quiz-question">2. How do you prefer to work?</div>
-    <div class="quiz-options">
-      <button class="quiz-option" onclick="selectOption('A')">🧑‍💼 Independently</button>
-      <button class="quiz-option" onclick="selectOption('B')">👥 In a team</button>
-      <button class="quiz-option" onclick="selectOption('C')">🛠️ Hands-on, practical tasks</button>
-    </div>
-    <div class="quiz-question">3. What's your approach to new opportunities?</div>
-    <div class="quiz-options">
-      <button class="quiz-option" onclick="selectOption('A')">💡 Always trying new things</button>
-      <button class="quiz-option" onclick="selectOption('B')">📊 Research before deciding</button>
-      <button class="quiz-option" onclick="selectOption('C')">🔒 Stick to what works</button>
-    </div>
-
     <div class="quiz-result" id="quizResult"></div>
-    <button class="cta-btn" onclick="showResult()">Get Result</button>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="section benefits-section">
+    <h2>Why Join the Program?</h2>
+    <div class="benefit">
+      <img src="images/photo_2024-06-27_11-24-39.jpg" alt="Affiliate Marketing">
+      <h3>Affiliate Marketing</h3>
+      <p>Earn commissions by promoting products.</p>
+    </div>
+    <div class="benefit">
+      <img src="images/photo_2024-06-27_11-24-41.jpg" alt="E-commerce">
+      <h3>What You Will Learn</h3>
+      <p>Launch your own online store and start selling.</p>
+    </div>
+    <div class="benefit">
+      <img src="images/photo_2024-05-24_12-03-36.jpg" alt="Smartphone and Internet">
+      <h3>What You Will Need</h3>
+      <p>Grow your money through smart investment strategies.</p>
+    </div>
   </section>
 
   <!-- Footer Section -->
@@ -152,33 +208,12 @@
   </footer>
 
   <script>
-    let answers = [];
-
-    function selectOption(option) {
-      answers.push(option);
-    }
-
-    function showResult() {
+    function showResult(result) {
       const resultElement = document.getElementById('quizResult');
-      let resultMessage = '';
-      
-      const countA = answers.filter(a => a === 'A').length;
-      const countB = answers.filter(a => a === 'B').length;
-      const countC = answers.filter(a => a === 'C').length;
-
-      if (countA >= 2) {
-        resultMessage = 'You are a risk-taker entrepreneur! 🚀';
-      } else if (countB >= 2) {
-        resultMessage = 'You are a strategic thinker entrepreneur! 📊';
-      } else if (countC >= 2) {
-        resultMessage = 'You are a practical entrepreneur! 🛠️';
-      } else {
-        resultMessage = 'You have a balanced entrepreneurial style! 🤔';
-      }
-
-      resultElement.textContent = resultMessage;
+      resultElement.textContent = result;
+      resultElement.style.display = 'block';
     }
   </script>
-
 </body>
 </html>
+
